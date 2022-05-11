@@ -9,15 +9,17 @@ $ sudo apt-get install postgresql
 ```
 Setup your database to your liking \
 \
-Edit the init.sh file:
-```
-$ nano init.sh
-```
-Change the username, password and postgres url string to match your setup \
-\
 Run the init.sh script to setup the webservice:
 ```
 $ sudo ./init.sh
 ```
+
+### Debugging:
+
+Logging can be tailed with the following command:
+```
+$ journalctl -u server.service -b -e -f
+```
+
 
 ### Source code: https://github.com/lr101/SpringServer
