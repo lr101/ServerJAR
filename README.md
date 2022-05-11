@@ -19,3 +19,5 @@ Run the init.sh script to setup the webservice:
 ```
 $ sudo ./init.sh
 ```
+
+### Source code: https://github.com/lr101/SpringServer
