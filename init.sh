@@ -8,6 +8,8 @@ tput setaf 6;printf "postgres port:"
 read port
 tput setaf 6;printf "postgres db name:"
 read name
+tput setaf 6;printf "server port:"
+read sport
 
 ### write to service file
 sudo cat > /etc/systemd/system/server.service << EOL
@@ -20,6 +22,7 @@ StartLimitIntervalSec=0
 Restart=always
 RestartSec=20
 User=pi
+Environment=PORT=$sport
 Environment=DB_USER=$user
 Environment=DB_PASSWORD=$password
 Environment=DATASOURCE_URL=jdbc:postgresql://127.0.0.1:$port/$name

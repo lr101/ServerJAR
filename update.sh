@@ -7,3 +7,4 @@ git pull
 
 ### ------------- ###
 sudo systemctl restart server.service
+journalctl -u server.service -b -e -f
