@@ -1,11 +1,9 @@
 #!/bin/bash
 
 git pull
-### changes to db ###
-
-
-### ------------- ###
-java -cp updateDatabase -pull='true'
+tput setaf 6;printf "update database?"
+read update
+sed -i '10iEnvironment=update=$update' /etc/systemd/system/server.service
 sudo systemctl restart server.service
-java -cp updateDatabase -pull='false'
+sed '10d' /etc/systemd/system/server.service
 journalctl -u server.service -b -e -f
